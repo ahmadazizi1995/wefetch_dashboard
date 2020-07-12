@@ -1,0 +1,37 @@
+@import '../../../theme/variables.scss';
+
+.centerAlign {
+    justify-content: center;
+    align-items: center;
+}
+
+.loginContainer {
+    background-color: $white;
+    height: 35vh;
+    width: 50vh;
+    margin-top: 20vh;
+    border: thick solid $purple;
+    
+}
+
+.loginHeading {
+    @extend %headingFont
+}
+
+.labelText {
+    @extend %titleFont
+}
+
+.loginButton {
+    margin-top: 2em;
+    color: $white; 
+    background-color: $purple;
+    width: 5em;
+    height: 2.5em;
+    font-size: 20px;
+}
+.loginButton:hover {
+    color: $purple;
+    background-color: $white;
+    border: thin solid purple;
+}

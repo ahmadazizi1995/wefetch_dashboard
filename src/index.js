@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import stores from './store';
 import { PersistGate } from 'redux-persist/integration/react';
-import './theme/index.css';
-import App from './App';
+import './theme/index.scss';
+import LoginScreen from './screens/Auth/LoginScreen'
 
 const { store, persistedStore } = stores;
+
+function App() {
+  return (
+    <div className="App">
+      <LoginScreen/>
+    </div>
+  );
+}
 
 ReactDOM.render(
   <Provider store={store}>

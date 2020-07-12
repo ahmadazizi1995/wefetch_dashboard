@@ -1,0 +1,18 @@
+/* Base theme color */
+$purple: #b55eac;
+$white: white;
+$black : black;
+
+/* Heading font */
+%headingFont {
+    font-size: 30px;
+    font-weight: bolder;
+    color: $purple;
+}
+
+/* Title font */
+%titleFont {
+    font-size: 18px;
+    font-weight: bold;
+    color: $black;
+}

@@ -1,6 +1,6 @@
 import { all, call } from 'redux-saga/effects';
 /* import all individual sagas */
-import { AuthSagas } from '../screens/auth/sagas';
+import { AuthSagas } from '../screens/Auth/sagas';
 
 
 function* rootSaga() {
