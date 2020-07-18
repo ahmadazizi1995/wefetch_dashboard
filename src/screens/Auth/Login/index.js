@@ -1,10 +1,12 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
+import { Container, Row, Image } from 'react-bootstrap'
 import './styles.scss';
 import Button from '../../../common/Button';
+import { logo } from '../../../theme/Images'
 
-class LoginScreen extends PureComponent {
+class Login extends PureComponent {
     constructor(props) {
         super(props);
 
@@ -14,10 +16,17 @@ class LoginScreen extends PureComponent {
         };
     }
 
+    onLogin() {
+
+    }
+
     render() {
         return (
             <Container className='loginContainer'>
-                <Row className='mt-3 centerAlign loginHeading'>
+                <Row className='mt-3 centerAlign'>
+                    <Image src={logo} className='logoImage' roundedCircle/>
+                </Row>
+                <Row className='mt-1 centerAlign loginHeading'>
                     <label>We Fetch Login</label>
                 </Row>
                 <Row className='mt-5 centerAlign labelText '>
@@ -28,16 +37,19 @@ class LoginScreen extends PureComponent {
                     <label className='mt-2 mr-2'>Password</label>
                     <input className='ml-2' type='password' placeholder='Enter Password' onChange={(event) => { this.setState({ password: event.target.value }) }} />
                 </Row>
-                <Row className='centerAlign'>
-                    <Button className='loginButton' text='Login' onClick={() => {}} />
+                <Row className='mt-3 mb-3 centerAlign'>
+                    <Button className='loginButton' text='Login' onClick={() => { this.onLogin() }} />
+                </Row>
+                <Row className='mt-3 mb-3 centerAlign'>
+                    <Link className='redirectLink' to='/signup'>Register</Link>
                 </Row>
             </Container>
         );
     }
 }
 
-const mapStateToProps = ({}) => ({});
+const mapStateToProps = ({ }) => ({});
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -4,14 +4,14 @@ import { Provider } from 'react-redux';
 import stores from './store';
 import { PersistGate } from 'redux-persist/integration/react';
 import './theme/index.scss';
-import LoginScreen from './screens/Auth/LoginScreen'
+import Navigation from './navigation'
 
 const { store, persistedStore } = stores;
 
 function App() {
   return (
     <div className="App">
-      <LoginScreen/>
+      <Navigation/>
     </div>
   );
 }

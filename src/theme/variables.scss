@@ -1,7 +1,9 @@
 /* Base theme color */
-$purple: #b55eac;
-$white: white;
-$black : black;
+$purple: #912D8A;
+$white: #FFFFFF;
+$black: black;
+$gray: #BFBFBF;
+$red: red;
 
 /* Heading font */
 %headingFont {
@@ -15,4 +17,11 @@ $black : black;
     font-size: 18px;
     font-weight: bold;
     color: $black;
+}
+
+/* Error font */
+%errorFont {
+    font-size: 13px;
+    color: $red;
+    font-weight: 600;
 }

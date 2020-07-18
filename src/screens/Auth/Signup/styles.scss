@@ -1,0 +1,64 @@
+@import '../../../theme/variables.scss';
+
+.signupHeading {
+    @extend %headingFont
+}
+
+.labelText {
+    @extend %titleFont
+}
+
+.centerAlign {
+    justify-content: center;
+    align-items: center;
+}
+
+.logoImage {
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+}
+
+.signupContainer {
+    width: 450px;
+    margin-top: 150px;
+    border: thick solid $purple;
+    background-color: $gray;
+}
+
+.passwordRow {
+    margin-left: 36px;
+}
+
+.passwordLabel {
+    margin-top: -30px;
+}
+
+.passwordFields {
+    margin-left: 5px;
+}
+
+.passwordError {
+    @extend %errorFont;
+}
+
+.signupButton {
+    color: $white; 
+    background-color: $purple;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+}
+.signupButton:hover {
+    color: $purple;
+    background-color: $white;
+    border: thin solid $purple;
+}
+
+.redirectLink {
+    color: $purple;
+}
+
+.redirectLink:hover {
+    color: $black;
+}
