@@ -9,7 +9,7 @@ const resettable = resettableReducer('ON_LOGOUT');
 
 /* combine all reducers */
 const rootReducer = combineReducers({
-    auth: resettable(AuthReducer)
+    auth: resettable(AuthReducer),
 });
 
 export default rootReducer;

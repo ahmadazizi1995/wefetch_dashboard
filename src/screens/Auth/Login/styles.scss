@@ -5,10 +5,10 @@
     align-items: center;
 }
 
-.logoImage {
+.loginLogo {
     justify-content: center;
-    width: 100px;
-    height: 100px;
+    width: 300px;
+    height: 50px;
 }
 
 .loginContainer {
@@ -33,10 +33,15 @@
     height: 50px;
     font-size: 20px;
 }
+
 .loginButton:hover {
     color: $purple;
     background-color: $white;
     border: thin solid $purple;
+}
+
+.loginButton:disabled {
+    background-color: $black;
 }
 
 .redirectLink {

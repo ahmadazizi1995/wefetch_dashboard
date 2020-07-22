@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import stores from './store';
 import { PersistGate } from 'redux-persist/integration/react';
 import './theme/index.scss';
-import Navigation from './navigation'
+import Navigation from './navigation';
 
 const { store, persistedStore } = stores;
 
