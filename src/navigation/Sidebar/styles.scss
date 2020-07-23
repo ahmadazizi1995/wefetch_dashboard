@@ -1,0 +1,32 @@
+@import '../../theme/variables.scss';
+
+.sidebarContainer {
+    margin-top: 85px;
+    background-color: $purple;
+    flex-direction: column;
+    width: 325px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 100px;
+}
+
+.sidebarItem {
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+.sidebarItem:hover {
+    background-color: $black;
+}
+
+.sidebarText {
+    @extend %titleFont;
+}
+
+.sidebarText:hover {
+    @extend %titleFont;
+    color: $white;
+}

@@ -1,16 +1,14 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
-import { connect } from 'react-redux';
-import { AuthActions } from '../screens/Auth/redux';
+import './styles.scss';
 import Login from '../screens/Auth/Login';
 import Signup from '../screens/Auth/Signup';
+import Header from './Header';
+import Sidebar from './Sidebar';
 import Authentication from '../screens/Auth/Authentication';
 import Authorization from '../screens/Auth/Authorization';
 
-function Navigation({
-    onLogout,
-}) {
+function Navigation() {
     return (
         <BrowserRouter>
             <Switch>
@@ -18,45 +16,175 @@ function Navigation({
                 <Route exact path={'/signup'} component={Signup} />
                 <Authentication>
                     <Fragment>
-                        <Authorization
-                            accessToCheck={'/dashboard'}
-                            onApproval={() => {
-                                return (
-                                    <Route
-                                        exact
-                                        path={'/dashboard'}
-                                        render={() => {
-                                            return (
-                                                <div>
-                                                    <p>
-                                                        Dashboard (ADMIN)
-                                                    </p>
-                                                    <Button onClick={() => { onLogout() }}>Logout</Button>
-                                                </div>
-                                            );
-                                        }}
-                                    />
-                                );
-                            }}
-                            onReject={() => {
-                                return (
-                                    <Route
-                                        exact
-                                        path={'/dashboard'}
-                                        render={() => {
-                                            return (
-                                                <div>
-                                                    <p>
-                                                        Dashboard (CLIENT)
-                                                    </p>
-                                                    <Button onClick={() => { onLogout() }}>Logout</Button>
-                                                </div>
-                                            );
-                                        }}
-                                    />
-                                );
-                            }}
-                        />
+                        <Header />
+                        <Sidebar />
+                        <main className={'dashboardContentBox'}>
+                            <Authorization
+                                accessToCheck={'/dashboard'}
+                                onApproval={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/dashboard'}
+                                            render={() => {
+                                                return (
+                                                    <div>
+                                                        <p>DASHBOARD (ADMIN)</p>
+                                                    </div>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                                onReject={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/dashboard'}
+                                            render={() => {
+                                                return (
+                                                    <div>
+                                                        <p>DASHBOARD (CLIENT)</p>
+                                                    </div>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                            />
+                            <Authorization
+                                accessToCheck={'/facilities'}
+                                onApproval={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/facilities'}
+                                            render={() => {
+                                                return (
+                                                    <div>
+                                                        <p>FACILITIES (ADMIN)</p>
+                                                    </div>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                                onReject={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/dashboard'}
+                                            render={() => {
+                                                return (
+                                                    <div>
+                                                        <p>Dashboard (CLIENT)</p>
+                                                    </div>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                            />
+                            <Authorization
+                                accessToCheck={'/users'}
+                                onApproval={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/users'}
+                                            render={() => {
+                                                return (
+                                                    <div>
+                                                        <p>USERS (ADMIN)</p>
+                                                    </div>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                                onReject={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/dashboard'}
+                                            render={() => {
+                                                return (
+                                                    <div>
+                                                        <p>DASHBOARD (CLIENT)</p>
+                                                    </div>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                            />
+                            <Authorization
+                                accessToCheck={'/pricing-plan'}
+                                onApproval={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/pricing-plan'}
+                                            render={() => {
+                                                return (
+                                                    <div>
+                                                        <p>PRICING_PLAN (ADMIN)</p>
+                                                    </div>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                                onReject={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/dashboard'}
+                                            render={() => {
+                                                return (
+                                                    <div>
+                                                        <p>DASHBOARD (CLIENT)</p>
+                                                    </div>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                            />
+                            <Authorization
+                                accessToCheck={'/security'}
+                                onApproval={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/security'}
+                                            render={() => {
+                                                return (
+                                                    <div>
+                                                        <p>SECURITY (ADMIN)</p>
+                                                    </div>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                                onReject={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/dashboard'}
+                                            render={() => {
+                                                return (
+                                                    <div>
+                                                        <p>DASHBOARD (CLIENT)</p>
+                                                    </div>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                            />
+                        </main>
                     </Fragment>
                 </Authentication>
             </Switch>
@@ -64,10 +192,4 @@ function Navigation({
     );
 }
 
-const mapStateToProps = () => { };
-
-const mapDispatchToProps = {
-    onLogout: AuthActions.onLogout,
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export default Navigation;
