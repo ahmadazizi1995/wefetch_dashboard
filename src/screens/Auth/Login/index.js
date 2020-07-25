@@ -29,28 +29,38 @@ function Login({
         );
     } else {
         return (
-            <Container className='loginContainer'>
-                <Row className='mt-3 centerAlign'>
-                    <Image src={logo} className='loginLogo' />
-                </Row>
-                <Row className='mt-1 centerAlign loginHeading'>
-                    <label>Login</label>
-                </Row>
-                <Row className='mt-5 centerAlign labelText '>
-                    <label className='mt-2 mr-5'>Email</label>
-                    <input className='ml-2' type='email' placeholder='Enter Email' onChange={(event) => { setEmail(event.target.value) }} />
-                </Row>
-                <Row className='mt-2 centerAlign labelText'>
-                    <label className='mt-2 mr-2'>Password</label>
-                    <input className='ml-2' type='password' placeholder='Enter Password' onChange={(event) => { setPassword(event.target.value) }} />
-                </Row>
-                <Row className='mt-3 mb-3 centerAlign'>
-                    <Button className='loginButton' disabled={false} onClick={() => { handleLoginButton() }}>Login</Button>
-                </Row>
-                <Row className='mt-3 mb-3 centerAlign'>
-                    <Link className='redirectLink' to='/signup'>Register</Link>
-                </Row>
-            </Container>
+            <div class="login">
+                <Container className='loginContainer'>
+                    <Row className='mt-3 centerAlign'>
+                        <Image src={logo} className='loginLogo' />
+                    </Row>
+                    <Row className='mt-1 centerAlign loginHeading'>
+                        <label>Login</label>
+                    </Row>
+                    <Row className='mt-3 centerAlign labelText '>
+                        {/* <label className='mt-2 mr-5'>Email</label>
+                    <input className='ml-2 loginInput' type='email' placeholder='Enter Email' onChange={(event) => { setEmail(event.target.value) }} /> */}
+                        <div class="form__group field">
+                            <input type="email" class="form__field" placeholder="Email" name="email" id='email' required  onChange={(event) => { setEmail(event.target.value) }}/>
+                            <label for="email" class="form__label">Email</label>
+                        </div>
+                    </Row>
+                    <Row className='mt-2 centerAlign labelText'>
+                        {/* <label className='mt-2 mr-2'>Password</label>
+                        <input className='ml-2 loginInput' type='password' placeholder='Enter Password' onChange={(event) => { setPassword(event.target.value) }} /> */}
+                        <div class="form__group field">
+                            <input type="password" class="form__field" placeholder="Password" name="password" id='password' required onChange={(event) => { setPassword(event.target.value) }}/>
+                            <label for="password" class="form__label">Password</label>
+                        </div>
+                    </Row>
+                    <Row className='mt-4 mb-3 centerAlign'>
+                        <Button className='btn loginButton' disabled={false} onClick={() => { handleLoginButton() }}>Login</Button>
+                    </Row>
+                    <Row className='mt-3 mb-3 centerAlign'>
+                        <Link className='redirectLink' to='/signup'>Register</Link>
+                    </Row>
+                </Container>
+            </div>
         );
     }
 }

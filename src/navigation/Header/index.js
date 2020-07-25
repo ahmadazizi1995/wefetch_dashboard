@@ -21,7 +21,7 @@ function Header({
                 <Navbar.Text className={'headerText'}>
                     Admin: Mark Otto
                 </Navbar.Text>
-                <Button className={'headerLogoutButton ml-4 mr-3'} onClick={() => { handleLogoutButton() }}>Logout</Button>
+                <Button className={'btn headerLogoutButton ml-4 mr-3'} onClick={() => { handleLogoutButton() }}>Logout</Button>
             </Navbar.Collapse>
         </Navbar>
     );

@@ -43,42 +43,60 @@ function Signup({
     };
 
     return (
-        <Container className='signupContainer'>
-            <Row className='mt-3 centerAlign'>
-                <Image src={logo} className='signupLogo' />
-            </Row>
-            <Row className='mt-1 centerAlign signupHeading'>
-                <label>Signup</label>
-            </Row>
-            <Row className='mt-5 centerAlign labelText '>
-                <label className='mt-2 mr-3'>Company</label>
-                <input className='ml-2' type='text' placeholder='Enter Company Name' value={companyName} onChange={(event) => { setCompanyName(event.target.value) }} />
-            </Row>
-            <Row className='mt-2 centerAlign labelText '>
-                <label className='mt-2 mr-5'>Email</label>
-                <input className='ml-2' type='email' placeholder='Enter Email' value={email} onChange={(event) => { setEmail(event.target.value) }} />
-            </Row>
-            <Row className='mt-2 passwordRow centerAlign labelText'>
-                <label className='passwordLabel'>Password</label>
-                <Col className='passwordFields'>
-                    <input type='password' placeholder='Enter Password' value={passwordOne} onChange={(event) => { setPasswordOne(event.target.value) }} />
-                    <input className='mt-1' type='password' placeholder='Enter Password Again' value={passwordTwo} onChange={(event) => { verifyPassword(event) }} />
-                </Col>
-            </Row>
-            {
-                passwordError && (
-                    <Row className='mt-3 centerAlign'>
-                        <text className='passwordError'>Passwords don't match, enter passwords again</text>
-                    </Row>
-                )
-            }
-            <Row className='mt-3 mb-3 centerAlign'>
-                <Button className='signupButton' disabled={false} onClick={() => { handleSignupButton() }}>Signup</Button>
-            </Row>
-            <Row className='mt-3 mb-3 centerAlign'>
-                <Link className='redirectLink' to='/login'>Already registered? Login instead</Link>
-            </Row>
-        </Container>
+        <div className="signUp">
+            <Container className='signupContainer'>
+                <Row className='mt-3 centerAlign'>
+                    <Image src={logo} className='signupLogo' />
+                </Row>
+                <Row className='mt-1 centerAlign signupHeading'>
+                    <label>Signup</label>
+                </Row>
+                <Row className='mt-3 centerAlign labelText '>
+
+                    <div class="form__group field">
+                        <input type="text" class="form__field" placeholder="Company Name" name="company" id='company' required onChange={(event) => { setCompanyName(event.target.value) }} />
+                        <label for="company" class="form__label">Company Name</label>
+                    </div>
+                </Row>
+                <Row className='mt-2 centerAlign labelText '>
+
+                    <div class="form__group field">
+                        <input type="email" class="form__field" placeholder="Email" name="email" id='email' required onChange={(event) => { setEmail(event.target.value) }} />
+                        <label for="email" class="form__label">Email</label>
+                    </div>
+                </Row>
+                <Row className='mt-2 centerAlign labelText'>
+                    {/* <Col className='passwordFields'> */}
+
+                        <div class="form__group field">
+                            <input type="password" class="form__field" placeholder="Password" name="password" id='password' required onChange={(event) => { setPasswordOne(event.target.value) }} />
+                            <label for="password" class="form__label">Password</label>
+                        </div>
+                    {/* </Col> */}
+                </Row>
+                <Row className='mt-2 centerAlign labelText'>
+                    {/* <Col className='passwordFields'> */}
+                        <div class="form__group field">
+                            <input type="password" class="form__field" placeholder="Password" name="password" id='password' required onChange={(event) => { setPasswordTwo(event.target.value) }}  />
+                            <label for="password" class="form__label">Confirm Password</label>
+                        </div>
+                    {/* </Col> */}
+                </Row>
+                {
+                    passwordError && (
+                        <Row className='mt-3 centerAlign'>
+                            <text className='passwordError'>Passwords don't match, enter passwords again</text>
+                        </Row>
+                    )
+                }
+                <Row className='mt-3 mb-3 centerAlign'>
+                    <Button className='btn signupButton' disabled={false} onClick={() => { handleSignupButton() }}>Signup</Button>
+                </Row>
+                <Row className='mt-3 mb-3 centerAlign'>
+                    <Link className='redirectLink' to='/login'>Already registered? Login instead</Link>
+                </Row>
+            </Container>
+        </div>
     );
 }
 
@@ -86,7 +104,7 @@ Signup.propTypes = {
     onSignup: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = () => {};
+const mapStateToProps = () => { };
 
 const mapDispatchToProps = {
     onSignup: AuthActions.onSignup,

@@ -16,8 +16,8 @@ function Navigation() {
                 <Route exact path={'/signup'} component={Signup} />
                 <Authentication>
                     <Fragment>
-                        <Header />
                         <Sidebar />
+                        <Header />
                         <main className={'dashboardContentBox'}>
                             <Authorization
                                 accessToCheck={'/dashboard'}

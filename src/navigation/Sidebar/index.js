@@ -20,9 +20,9 @@ function Sidebar() {
             <Nav.Item className={'sidebarItem'}>
                 <Nav.Link className={'sidebarText'} href="/security">Security</Nav.Link>
             </Nav.Item>
-            <Nav.Item className={'sidebarItem'}>
+            {/* <Nav.Item className={'sidebarItem'}>
                 <Nav.Link className={'sidebarText'} disabled>Disabled</Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
         </Nav>
     );
 }
