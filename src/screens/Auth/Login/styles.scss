@@ -15,7 +15,7 @@
     width: 450px;
     margin-top: 150px;
     border: thick solid $purple;
-    background-color: $gray;
+    background-color: $white;
 }
 
 .loginHeading {
@@ -32,6 +32,10 @@
 
 .loginButton:hover {
     @extend %buttonHover;
+}
+
+.loginButton:active {
+    @extend %buttonActive;
 }
 
 .redirectLink {

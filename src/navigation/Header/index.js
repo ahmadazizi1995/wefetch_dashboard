@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { AuthActions } from '../../screens/Auth/redux';
-import { Navbar, Image, Button } from 'react-bootstrap';
+import { Navbar, Image } from 'react-bootstrap';
+import { Button } from '@material-ui/core';
 import './styles.scss';
 import { logo } from '../../theme/Images';
 

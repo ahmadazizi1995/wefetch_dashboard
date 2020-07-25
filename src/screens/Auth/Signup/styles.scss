@@ -23,7 +23,7 @@
     width: 450px;
     margin-top: 150px;
     border: thick solid $purple;
-    background-color: $gray;
+    background-color: $white;
 }
 
 .passwordRow {
@@ -48,6 +48,10 @@
 
 .signupButton:hover {
     @extend %buttonHover;
+}
+
+.signupButton:active {
+    @extend %buttonActive;
 }
 
 .signupButton:disabled {

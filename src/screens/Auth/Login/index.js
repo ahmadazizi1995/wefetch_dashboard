@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { AuthActions } from '../redux';
 import { Link, Redirect } from 'react-router-dom';
-import { Container, Row, Image, Button } from 'react-bootstrap'
+import { Container, Row, Image } from 'react-bootstrap'
+import { Button } from '@material-ui/core';
 import './styles.scss';
 import { logo } from '../../../theme/Images';
 
