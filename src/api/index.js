@@ -11,34 +11,33 @@ const createBackendServer = (baseURL = API_BASE_URL) => {
         timeout: 0
     });
 
-    // log api responses for testing purposes
+    /* Log api responses for testing purposes */
     // api.addMonitor((res) => { 
     //     console.log('api response', res); 
     // });
 
-    /* encode request url */
+    /* Encode request url */
     api.addRequestTransform((req) => {
         req.url = encodeURI(req.url);
     });
-
+    // onSignup body = {
+    //     companyName: '',
+    //     fullName: '',
+    //     email: '',
+    //     password: ''
+    // }
     const onSignup = (body) => api.post('/api/signup', body);
-    /* const body = {
-        companyName: '',
-        fullName: '',
-        email: '',
-        password: ''
-    } */
+    // onLogin body = {
+    //     email: '',
+    //     password: ''
+    // }
     const onLogin = (body) => api.post('/api/login', body);
-    /* const body = {
-        email: '',
-        password: ''
-    } */
+    // onUpdatePassword body = {
+    //     id: '',
+    //     currentPassword: '',
+    //     newPassword: ''
+    // }
     const onUpdatePassword = (body) => api.put('/api/updatePassword', body);
-    /* const body = {
-        id: '',
-        currentPassword: '',
-        newPassword: ''
-    } */
     
     return {
         onSignup,
