@@ -7,6 +7,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Authentication from '../screens/Auth/Authentication';
 import Authorization from '../screens/Auth/Authorization';
+import Dashboard from '../screens/Auth/Dashboard';
 
 function Navigation() {
     return (
@@ -16,8 +17,8 @@ function Navigation() {
                 <Route exact path={'/signup'} component={Signup} />
                 <Authentication>
                     <Fragment>
-                        <Header />
                         <Sidebar />
+                        <Header />
                         <main className={'dashboardContentBox'}>
                             <Authorization
                                 accessToCheck={'/dashboard'}
@@ -28,8 +29,46 @@ function Navigation() {
                                             path={'/dashboard'}
                                             render={() => {
                                                 return (
+                                                    // <div>
+                                                    //     <p>DASHBOARD (ADMIN)</p>
+                                                    // </div>
+                                                    <>
+                                                    <Dashboard />
+                                                    </>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                                onReject={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/dashboard'}
+                                            render={() => {
+                                                return (
+                                                    // <div>
+                                                    //     <p>DASHBOARD (CLIENT)</p>
+                                                    // </div>
+                                                    <>
+                                                    </>
+                                                );
+                                            }}
+                                        />
+                                    );
+                                }}
+                            />
+                            <Authorization
+                                accessToCheck={'/companies'}
+                                onApproval={() => {
+                                    return (
+                                        <Route
+                                            exact
+                                            path={'/companies'}
+                                            render={() => {
+                                                return (
                                                     <div>
-                                                        <p>DASHBOARD (ADMIN)</p>
+                                                        <p>COMPANIES (ADMIN)</p>
                                                     </div>
                                                 );
                                             }}
@@ -43,9 +82,11 @@ function Navigation() {
                                             path={'/dashboard'}
                                             render={() => {
                                                 return (
-                                                    <div>
-                                                        <p>DASHBOARD (CLIENT)</p>
-                                                    </div>
+                                                    // <div>
+                                                    //     <p>Dashboard (CLIENT)</p>
+                                                    // </div>
+                                                    <>
+                                                    </>
                                                 );
                                             }}
                                         />
@@ -76,9 +117,11 @@ function Navigation() {
                                             path={'/dashboard'}
                                             render={() => {
                                                 return (
-                                                    <div>
-                                                        <p>Dashboard (CLIENT)</p>
-                                                    </div>
+                                                    // <div>
+                                                    //     <p>Dashboard (CLIENT)</p>
+                                                    // </div>
+                                                    <>
+                                                    </>
                                                 );
                                             }}
                                         />
@@ -109,9 +152,11 @@ function Navigation() {
                                             path={'/dashboard'}
                                             render={() => {
                                                 return (
-                                                    <div>
-                                                        <p>DASHBOARD (CLIENT)</p>
-                                                    </div>
+                                                    // <div>
+                                                    //     <p>DASHBOARD (CLIENT)</p>
+                                                    // </div>
+                                                    <>
+                                                    </>
                                                 );
                                             }}
                                         />
@@ -142,9 +187,11 @@ function Navigation() {
                                             path={'/dashboard'}
                                             render={() => {
                                                 return (
-                                                    <div>
-                                                        <p>DASHBOARD (CLIENT)</p>
-                                                    </div>
+                                                    // <div>
+                                                    //     <p>DASHBOARD (CLIENT)</p>
+                                                    // </div>
+                                                    <>
+                                                    </>
                                                 );
                                             }}
                                         />
@@ -175,9 +222,11 @@ function Navigation() {
                                             path={'/dashboard'}
                                             render={() => {
                                                 return (
-                                                    <div>
-                                                        <p>DASHBOARD (CLIENT)</p>
-                                                    </div>
+                                                    // <div>
+                                                    //     <p>DASHBOARD (CLIENT)</p>
+                                                    // </div>
+                                                    <>
+                                                    </>
                                                 );
                                             }}
                                         />

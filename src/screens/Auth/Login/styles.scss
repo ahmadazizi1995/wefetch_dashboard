@@ -1,5 +1,8 @@
 @import '../../../theme/variables.scss';
 
+.login {
+
+
 .centerAlign {
     justify-content: center;
     align-items: center;
@@ -7,19 +10,29 @@
 
 .loginLogo {
     justify-content: center;
-    width: 300px;
-    height: 50px;
+    width: 50%;
+    height: 100%;
 }
 
 .loginContainer {
+    // width: 450px;
+    // margin-top: 150px;
+    // border: thick solid $purple;
+    // background-color: $white;
+
     width: 450px;
     margin-top: 150px;
-    border: thick solid $purple;
-    background-color: $white;
+    background-color: #FFFFFF;
+    padding: 2% 0%;
+    border-radius: 24px;
+    box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.1);
+
+
 }
 
 .loginHeading {
-    @extend %headingFont
+    @extend %headingFont;
+    font-weight: 400;
 }
 
 .labelText {
@@ -27,16 +40,16 @@
 }
 
 .loginButton {
-    @extend %button;
+    @extend %button-bts-primary;
 }
 
-.loginButton:hover {
-    @extend %buttonHover;
-}
+// .loginButton:hover {
+//     @extend %buttonHover;
+// }
 
-.loginButton:active {
-    @extend %buttonActive;
-}
+// .loginButton:active {
+//     @extend %buttonActive;
+// }
 
 .redirectLink {
     color: $purple;
@@ -44,4 +57,78 @@
 
 .redirectLink:hover {
     color: $black;
+}
+
+.loginInput {
+    border: none;
+    border-bottom: solid 2px purple;
+}
+
+
+
+    .form__group {
+        position: relative;
+        padding: 15px 0 0;
+        margin-top: 10px;
+        width: 50%;
+    }
+
+    .form__field {
+        font-family: inherit;
+        width: 100%;
+        border: 0;
+        border-bottom: 2px solid $gray;
+        outline: 0;
+        font-size: 1.3rem;
+        color: $darkGray;
+        padding: 7px 0;
+        background: transparent;
+        transition: border-color 0.2s;
+
+        &::placeholder {
+            color: transparent;
+        }
+
+        &:placeholder-shown~.form__label {
+            font-size: 1.3rem;
+            cursor: text;
+            top: 20px;
+        }
+    }
+
+    .form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: $gray;
+    }
+
+    .form__field:focus {
+        ~.form__label {
+            position: absolute;
+            top: 0;
+            display: block;
+            transition: 0.2s;
+            font-size: 1rem;
+            color: $primary;
+            font-weight: 700;
+        }
+
+        padding-bottom: 6px;
+        font-weight: 700;
+        border-width: 3px;
+        border-image: linear-gradient(to right, $primary, $secondary);
+        border-image-slice: 1;
+    }
+
+    /* reset input */
+    .form__field {
+
+        &:required,
+        &:invalid {
+            box-shadow: none;
+        }
+    }
 }
