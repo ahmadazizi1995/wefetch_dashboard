@@ -38,18 +38,14 @@ function Login({
                         <label>Login</label>
                     </Row>
                     <Row className='mt-3 centerAlign labelText '>
-                        {/* <label className='mt-2 mr-5'>Email</label>
-                    <input className='ml-2 loginInput' type='email' placeholder='Enter Email' onChange={(event) => { setEmail(event.target.value) }} /> */}
                         <div class="form__group field">
-                            <input type="email" class="form__field" placeholder="Email" name="email" id='email' required  onChange={(event) => { setEmail(event.target.value) }}/>
+                            <input type="email" class="form__field" placeholder="Email" name="email" id='email' required onChange={(event) => { setEmail(event.target.value) }} />
                             <label for="email" class="form__label">Email</label>
                         </div>
                     </Row>
                     <Row className='mt-2 centerAlign labelText'>
-                        {/* <label className='mt-2 mr-2'>Password</label>
-                        <input className='ml-2 loginInput' type='password' placeholder='Enter Password' onChange={(event) => { setPassword(event.target.value) }} /> */}
                         <div class="form__group field">
-                            <input type="password" class="form__field" placeholder="Password" name="password" id='password' required onChange={(event) => { setPassword(event.target.value) }}/>
+                            <input type="password" class="form__field" placeholder="Password" name="password" id='password' required onChange={(event) => { setPassword(event.target.value) }} />
                             <label for="password" class="form__label">Password</label>
                         </div>
                     </Row>

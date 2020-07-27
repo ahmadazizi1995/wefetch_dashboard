@@ -24,29 +24,12 @@
 }
 
 .signupContainer {
-    // width: 450px;
-    // margin-top: 150px;
-    // border: thick solid $purple;
-    // background-color: $white;
-
     width: 450px;
     margin-top: 3.5%;
     background-color: #FFFFFF;
     padding: 2% 0%;
     border-radius: 24px;
     box-shadow: 0px 0px 19px 1px rgba(0, 0, 0, 0.1);
-}
-
-.passwordRow {
-    margin-left: 36px;
-}
-
-.passwordLabel {
-    margin-top: -30px;
-}
-
-.passwordFields {
-    margin-left: 5px;
 }
 
 .passwordError {
@@ -56,14 +39,6 @@
 .signupButton {
     @extend %button-bts-primary;
 }
-
-// .signupButton:hover {
-//     @extend %buttonHover;
-// }
-
-// .signupButton:active {
-//     @extend %buttonActive;
-// }
 
 .signupButton:disabled {
     @extend %button;
@@ -76,9 +51,6 @@
 .redirectLink:hover {
     color: $black;
 }
-
-
-
 
 .form__group {
     position: relative;

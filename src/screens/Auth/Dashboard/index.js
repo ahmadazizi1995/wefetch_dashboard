@@ -1,12 +1,9 @@
 import React from 'react';
-// import { Nav } from 'react-bootstrap';
 import './styles.scss';
-import { Accordion, Card, Col, Row, Modal } from 'react-bootstrap';
-// import data from './dataSource';
+import { Accordion, Card } from 'react-bootstrap';
 import facility from './../../../assets/facility.svg';
 import users from './../../../assets/users.svg';
 import payment from './../../../assets/payment.svg';
-// import facility from './../../../assets/facility.svg';
 
 function Dashboard() {
 

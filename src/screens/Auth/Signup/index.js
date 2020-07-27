@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { AuthActions } from '../redux';
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Image } from 'react-bootstrap'
+import { Container, Row, Image } from 'react-bootstrap'
 import { Button } from '@material-ui/core';
 import './styles.scss';
 import { logo } from '../../../theme/Images';
@@ -19,10 +19,9 @@ function Signup({
 
 
     const verifyPassword = (event) => {
-        const passwordTwo = event.target.value;
+        setPasswordTwo(event.target.value);
 
-        setPasswordTwo(passwordTwo);
-        passwordOne === passwordTwo ?
+        passwordOne === event.target.value ?
             (
                 setPasswordError(false)
             ) : (
@@ -54,33 +53,29 @@ function Signup({
                 <Row className='mt-3 centerAlign labelText '>
 
                     <div class="form__group field">
-                        <input type="text" class="form__field" placeholder="Company Name" name="company" id='company' required onChange={(event) => { setCompanyName(event.target.value) }} />
+                        <input type="text" class="form__field" placeholder="Company Name" name="company" id='company' required value={companyName} onChange={(event) => { setCompanyName(event.target.value) }} />
                         <label for="company" class="form__label">Company Name</label>
                     </div>
                 </Row>
                 <Row className='mt-2 centerAlign labelText '>
 
                     <div class="form__group field">
-                        <input type="email" class="form__field" placeholder="Email" name="email" id='email' required onChange={(event) => { setEmail(event.target.value) }} />
+                        <input type="email" class="form__field" placeholder="Email" name="email" id='email' required value={email} onChange={(event) => { setEmail(event.target.value) }} />
                         <label for="email" class="form__label">Email</label>
                     </div>
                 </Row>
                 <Row className='mt-2 centerAlign labelText'>
-                    {/* <Col className='passwordFields'> */}
 
                         <div class="form__group field">
-                            <input type="password" class="form__field" placeholder="Password" name="password" id='password' required onChange={(event) => { setPasswordOne(event.target.value) }} />
+                            <input type="password" class="form__field" placeholder="Password" name="password" id='password' required value={passwordOne} onChange={(event) => { setPasswordOne(event.target.value) }} />
                             <label for="password" class="form__label">Password</label>
                         </div>
-                    {/* </Col> */}
                 </Row>
                 <Row className='mt-2 centerAlign labelText'>
-                    {/* <Col className='passwordFields'> */}
                         <div class="form__group field">
-                            <input type="password" class="form__field" placeholder="Password" name="password" id='password' required onChange={(event) => { setPasswordTwo(event.target.value) }}  />
+                            <input type="password" class="form__field" placeholder="Password" name="password" id='password' required value={passwordTwo} onChange={(event) => { verifyPassword(event) }}  />
                             <label for="password" class="form__label">Confirm Password</label>
                         </div>
-                    {/* </Col> */}
                 </Row>
                 {
                     passwordError && (
