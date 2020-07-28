@@ -25,12 +25,7 @@ const createBackendServer = (baseURL = API_BASE_URL) => {
     
     const signup = (body) => api.post(`/api/dashboard-user/signup`, body);
     const login = (body) => api.post(`/api/dashboard-user/login`, body);
-    // onUpdatePassword body = {
-    //     id: '',
-    //     currentPassword: '',
-    //     newPassword: ''
-    // }
-    const updatePassword = (body) => api.put(`/api/dashboard/user/updatePassword`, body);
+    const updatePassword = (body) => api.put(`/api/dashboard-user/updatePassword`, body);
     const getCompaniesAndFacilities = () => api.get(`/api/company/getCompaniesAndFacilities`);
     const updateCompany = (body) => api.put(`/api/company/updateCompany`, body);
     const createFacility  = (body) => api.post(`/api/facility/createFacility`, body);

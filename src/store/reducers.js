@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { resettableReducer } from 'reduxsauce';
 /* import all individual reducers */
-import { AuthReducer } from '../screens/Auth/redux'
+import { AuthReducer } from '../screens/Auth/redux';
 
 
 /* reset state on action type 'ON_LOGOUT' */

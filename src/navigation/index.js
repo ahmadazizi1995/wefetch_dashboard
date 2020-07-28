@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './styles.scss';
 import Login from '../screens/Auth/Login';
 import Signup from '../screens/Auth/Signup';

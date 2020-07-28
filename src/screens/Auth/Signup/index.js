@@ -11,7 +11,8 @@ import { logo } from '../../../theme/Images';
 function Signup({
     signupSuccessful,
     setSignupSuccessful,
-    onSignup
+    onSignup,
+    isLoading,
 }) {
     const [fullName, setFullName] = useState('');
     const [companyName, setCompanyName] = useState('');
@@ -57,7 +58,7 @@ function Signup({
         }
     };
 
-    const fieldsEmpty = () => {
+    const buttonEnabled = () => {
         if (fullName && companyName && email && passwordOne && !passwordError) {
             return false
         } else {
@@ -110,19 +111,19 @@ function Signup({
                     {
                         emailError && (
                             <Row className='mt-3 centerAlign'>
-                                <text className='passwordError'>Invalid Email</text>
+                                <p className='passwordError'>Invalid Email</p>
                             </Row>
                         )
                     }
                     {
                         passwordError && (
                             <Row className='mt-3 centerAlign'>
-                                <text className='passwordError'>Passwords don't match, enter passwords again</text>
+                                <p className='passwordError'>Passwords don't match, enter passwords again</p>
                             </Row>
                         )
                     }
                     <Row className='mt-3 mb-3 centerAlign'>
-                        <Button className='btn signupButton' disabled={fieldsEmpty()} onClick={() => { handleSignupButton() }}>Signup</Button>
+                        <Button className='btn signupButton' disabled={buttonEnabled()} onClick={() => { handleSignupButton() }}>{isLoading ? (`Loading`) : (`Signup`)}</Button>
                     </Row>
                     <Row className='mt-3 mb-3 centerAlign'>
                         <Link className='redirectLink' to='/login'>Already registered? Login instead</Link>
@@ -148,15 +149,20 @@ Signup.propTypes = {
 
     /* Function to call when submitting signup form */
     onSignup: PropTypes.func.isRequired,
+
+    /* API call in progress */
+    isLoading: PropTypes.bool.isRequired,
 };
 
 Signup.defaultProps = {
     signupSuccessful: false,
     setSignupSuccessful: () => { },
-}
+    isLoading: false,
+};
 
 const mapStateToProps = ({ auth }) => ({
     signupSuccessful: auth.signupSuccessful,
+    isLoading: auth.isLoading,
  });
 
 const mapDispatchToProps = {

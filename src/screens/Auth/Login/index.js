@@ -11,6 +11,7 @@ import { logo } from '../../../theme/Images';
 function Login({
     isUserLoggedIn,
     onLogin,
+    isLoading,
 }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -50,7 +51,7 @@ function Login({
                         </div>
                     </Row>
                     <Row className='mt-4 mb-3 centerAlign'>
-                        <Button className='btn loginButton' disabled={false} onClick={() => { handleLoginButton() }}>Login</Button>
+                        <Button className='btn loginButton' disabled={false} onClick={() => { handleLoginButton() }}>{isLoading ? (`Loading`) : (`Login`)}</Button>
                     </Row>
                     <Row className='mt-3 mb-3 centerAlign'>
                         <Link className='redirectLink' to='/signup'>Register</Link>
@@ -67,10 +68,18 @@ Login.propTypes = {
 
     /* Function dispatched when login button clicked */
     onLogin: PropTypes.func.isRequired,
+
+    /* API call in progress */
+    isLoading: PropTypes.bool.isRequired,
+};
+
+Login.defaultProps = {
+    isLoading: false,
 };
 
 const mapStateToProps = ({ auth }) => ({
     isUserLoggedIn: auth.isUserLoggedIn,
+    isLoading: auth.isLoading
 });
 
 const mapDispatchToProps = {
