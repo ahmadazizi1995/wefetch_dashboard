@@ -1,6 +1,8 @@
 import apisauce from 'apisauce';
 
 const API_BASE_URL = 'http://localhost:1337';
+// const API_BASE_URL = 'https://devapi.wefetchapp.com';
+// const API_BASE_URL = 'https://api.wefetchapp.com';
 
 const createBackendServer = (baseURL = API_BASE_URL) => {
     const api = apisauce.create({
