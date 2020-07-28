@@ -1,11 +1,11 @@
 import React from 'react';
 import './styles.scss';
 import { Accordion, Card } from 'react-bootstrap';
-import facility from './../../../assets/facility.svg';
-import users from './../../../assets/users.svg';
-import payment from './../../../assets/payment.svg';
+import facility from '../../theme/Images/facility.svg';
+import users from '../../theme/Images/users.svg';
+import payment from '../../theme/Images/payment.svg';
 
-function Dashboard() {
+function Companies() {
 
     let data = [
         {
@@ -23,7 +23,7 @@ function Dashboard() {
             "id": 2,
             "createdAt": 1595015555755,
             "updatedAt": 1595015555755,
-            "name": "Company B",
+            "name": "Pet Mania",
             "city": "",
             "plan": "standard",
             "facilities": 4,
@@ -33,12 +33,12 @@ function Dashboard() {
     ];
 
     return (
-        <div className="dashboard-body">
+        <div className="companies-body">
             <div className="content-card">
                 <Accordion>
-                    {data.map((element) => {
+                    {data.map((element, index) => {
                         return (
-                            <Card>
+                            <Card key={index}>
                                 <Accordion.Toggle as={Card.Header} eventKey={element.id}>
 
                                     <div className="row ">
@@ -85,7 +85,6 @@ function Dashboard() {
                                         <div className="col-1 text-center align-self-center">
                                             ...
                                         </div>
-
                                     </div>
 
                                 </Accordion.Toggle>
@@ -106,7 +105,8 @@ function Dashboard() {
 
                 </Accordion>
             </div>
-        </div>);
+        </div>
+    );
 };
 
-export default Dashboard;
+export default Companies;

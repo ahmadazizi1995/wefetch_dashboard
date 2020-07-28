@@ -29,7 +29,7 @@ function Login({
         );
     } else {
         return (
-            <div class="login">
+            <div className="login">
                 <Container className='loginContainer'>
                     <Row className='mt-3 centerAlign'>
                         <Image src={logo} className='loginLogo' />
@@ -38,15 +38,15 @@ function Login({
                         <label>Login</label>
                     </Row>
                     <Row className='mt-3 centerAlign labelText '>
-                        <div class="form__group field">
-                            <input type="email" class="form__field" placeholder="Email" name="email" id='email' required onChange={(event) => { setEmail(event.target.value) }} />
-                            <label for="email" class="form__label">Email</label>
+                        <div className="form__group field">
+                            <input type="email" className="form__field" placeholder="Email" name="email" id='email' required onChange={(event) => { setEmail(event.target.value) }} />
+                            <label className="form__label">Email</label>
                         </div>
                     </Row>
                     <Row className='mt-2 centerAlign labelText'>
-                        <div class="form__group field">
-                            <input type="password" class="form__field" placeholder="Password" name="password" id='password' required onChange={(event) => { setPassword(event.target.value) }} />
-                            <label for="password" class="form__label">Password</label>
+                        <div className="form__group field">
+                            <input type="password" className="form__field" placeholder="Password" name="password" id='password' required onChange={(event) => { setPassword(event.target.value) }} />
+                            <label className="form__label">Password</label>
                         </div>
                     </Row>
                     <Row className='mt-4 mb-3 centerAlign'>

@@ -21,7 +21,7 @@
 }
 
 .sidebarItem:hover {
-    background-color: $black;
+    background-color: $lightGray !important;
 }
 
 .sidebarText {
@@ -30,5 +30,5 @@
 
 .sidebarText:hover {
     @extend %titleFont;
-    color: $white;
+    color: $purple !important;
 }

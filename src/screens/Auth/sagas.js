@@ -1,29 +1,29 @@
-import { call, put, select, all, takeLatest } from 'redux-saga/effects';
+import { call, put, all, takeLatest } from 'redux-saga/effects';
 import { AuthTypes } from './redux';
 import API from '../../api/index';
 
 const api = API.createBackendServer();
 
 function* onLogin({ login }, { body }) {
-    // const res = yield call(login,  body);
-    // if (res.ok) {
-    //     yield put({ type: AuthTypes.SET_USER, user: res.data });
-    // }
-    if (body.email === 'admin@admin.com' && body.password === '12345') {
-        yield put({ type: AuthTypes.SET_IS_USER_LOGGED_IN, isUserLoggedIn: true });
-        yield put({ type: AuthTypes.SET_USER, user: { role: 'admin' } });
-    } else if (body.email === 'client@client.com' && body.password === '12345') {
-        yield put({ type: AuthTypes.SET_IS_USER_LOGGED_IN, isUserLoggedIn: true });
-        yield put({ type: AuthTypes.SET_USER, user: { role: 'client' } });
+    const response = yield call(login, body);
 
+    if (response.ok) {
+        yield put({ type: AuthTypes.SET_USER, user: response.data.data });
+        yield put({ type: AuthTypes.SET_IS_USER_LOGGED_IN, isUserLoggedIn: true });
     } else {
-        yield put({ type: AuthTypes.SET_IS_USER_LOGGED_IN, isUserLoggedIn: false });
-        alert('Incorrect email or password')
+        alert(response.data.message);
     }
 }
 
 function* onSignup({ signup }, { body }) {
-    // const res = yield call(signup, body);
+    const response = yield call(signup, body);
+
+    if (response.ok) {
+        alert('Registered successfully');
+        yield put({ type: AuthTypes.SET_SIGNUP_SUCCESSFUL, signupSuccessful: true });
+    } else {
+        alert(response.data.message);
+    }
 }
 
 export function* AuthSagas() {

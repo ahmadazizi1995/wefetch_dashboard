@@ -20,29 +20,30 @@ const createBackendServer = (baseURL = API_BASE_URL) => {
     api.addRequestTransform((req) => {
         req.url = encodeURI(req.url);
     });
-    // onSignup body = {
-    //     companyName: '',
-    //     fullName: '',
-    //     email: '',
-    //     password: ''
-    // }
-    const onSignup = (body) => api.post('/api/signup', body);
-    // onLogin body = {
-    //     email: '',
-    //     password: ''
-    // }
-    const onLogin = (body) => api.post('/api/login', body);
+    
+    const signup = (body) => api.post(`/api/dashboard-user/signup`, body);
+    const login = (body) => api.post(`/api/dashboard-user/login`, body);
     // onUpdatePassword body = {
     //     id: '',
     //     currentPassword: '',
     //     newPassword: ''
     // }
-    const onUpdatePassword = (body) => api.put('/api/updatePassword', body);
+    const updatePassword = (body) => api.put(`/api/dashboard/user/updatePassword`, body);
+    const getCompaniesAndFacilities = () => api.get(`/api/company/getCompaniesAndFacilities`);
+    const updateCompany = (body) => api.put(`/api/company/updateCompany`, body);
+    const createFacility  = (body) => api.post(`/api/facility/createFacility`, body);
+    const updateFacility = (body) => api.put(`/api/facility/updateFacility`, body);
+    const deleteFacility = (body) => api.delete(`/api/facility/deleteFacility`, body);
     
     return {
-        onSignup,
-        onLogin,
-        onUpdatePassword
+        signup,
+        login,
+        updatePassword,
+        getCompaniesAndFacilities,
+        updateCompany,
+        createFacility,
+        updateFacility,
+        deleteFacility
     };
 };
 
