@@ -1,0 +1,30 @@
+@import './../../theme/variables.scss';
+
+.price-card {
+    background-color: $white;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    color: $purple;
+    font-weight: 500;
+    font-size: 1.4rem;
+    border-radius: 24px;
+    .package-key{
+
+    }
+    .price {
+        font-size: 3.5rem;
+        color: $purple;
+        position: relative;
+        font-weight: 600;
+    }
+
+    .duration-text {
+        font-size: 1.0rem;
+        font-weight: 800;
+        letter-spacing: 0.8;
+        color: $black;
+        text-transform: uppercase;
+    }
+    .user-limit{
+        font-size: 1.8rem;
+    }
+}

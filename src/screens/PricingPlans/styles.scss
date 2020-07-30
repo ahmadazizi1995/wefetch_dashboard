@@ -1,1 +1,62 @@
 @import '../../theme/variables.scss';
+
+
+.pricing-plan {
+
+    .nav-tabs {
+        border: none;
+        justify-content: center;
+        color: $black;
+    }
+
+    .nav-link {
+        background-color: $white;
+        color: $purple;
+        padding: 10px 25px;
+
+        &:first-of-type {
+            border-radius: 25px 0px 0px 25px;
+        }
+
+        &:last-of-type {
+            border-radius: 0px 25px 25px 0px;
+        }
+
+        &.active {
+            @extend %button-bts-primary;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    .price-card {
+        background-color: $white;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+        color: $purple;
+        font-weight: 500;
+        font-size: 1.4rem;
+        border-radius: 24px;
+        .package-key{
+
+        }
+        .price {
+            font-size: 3.5rem;
+            color: $purple;
+            position: relative;
+            font-weight: 600;
+        }
+
+        .duration-text {
+            font-size: 1.0rem;
+            font-weight: 800;
+            letter-spacing: 0.8;
+            color: $black;
+            text-transform: uppercase;
+        }
+        .user-limit{
+            font-size: 1.8rem;
+        }
+    }
+
+
+}
